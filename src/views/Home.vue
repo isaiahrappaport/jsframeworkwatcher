@@ -1,55 +1,56 @@
 <template>
   <div class="home">
+    <commit-chart :react_data="react_data" />
     <div class="vue-div">
-    <h1>{{ message }}</h1>
-    <br/>
-    <h2 class="title">Vue.Js</h2>
-    <h2>Forks:</h2>
-    <h4 class="data"> {{vue_data.forks_count}} </h4>
-    <h2>Watchers:</h2>
-    <h4 class="data"> {{vue_data.watchers}} </h4>
-    <h2>Stars:</h2>
-    <h4 class="data"> {{vue_data.stargazers_count}} </h4>
+      <h1>{{ message }}</h1>
+      <br />
+      <h2 class="title">Vue.Js</h2>
+      <h2>Forks:</h2>
+      <h4 class="data">{{ vue_data.forks_count }}</h4>
+      <h2>Watchers:</h2>
+      <h4 class="data">{{ vue_data.watchers }}</h4>
+      <h2>Stars:</h2>
+      <h4 class="data">{{ vue_data.stargazers_count }}</h4>
     </div>
-    <br>
+    <br />
     <div class="angular">
       <h2 class="title">Angular.Js</h2>
-    <h2>Forks:</h2>
-    <h4 class="data"> {{angular_data.forks_count}} </h4>
-    <h2>Watchers:</h2>
-    <h4 class="data"> {{angular_data.watchers}} </h4>
-    <h2>Stars:</h2>
-    <h4 class="data"> {{angular_data.stargazers_count}} </h4>
+      <h2>Forks:</h2>
+      <h4 class="data">{{ angular_data.forks_count }}</h4>
+      <h2>Watchers:</h2>
+      <h4 class="data">{{ angular_data.watchers }}</h4>
+      <h2>Stars:</h2>
+      <h4 class="data">{{ angular_data.stargazers_count }}</h4>
     </div>
-    <br>
-     <div class="ember">
+    <br />
+    <div class="ember">
       <h2 class="title">Ember.Js</h2>
-    <h2>Forks:</h2>
-    <h4 class="data"> {{ember_data.forks_count}} </h4>
-    <h2>Watchers:</h2>
-    <h4 class="data"> {{ember_data.watchers}} </h4>
-    <h2>Stars:</h2>
-    <h4 class="data"> {{ember_data.stargazers_count}} </h4>
+      <h2>Forks:</h2>
+      <h4 class="data">{{ ember_data.forks_count }}</h4>
+      <h2>Watchers:</h2>
+      <h4 class="data">{{ ember_data.watchers }}</h4>
+      <h2>Stars:</h2>
+      <h4 class="data">{{ ember_data.stargazers_count }}</h4>
     </div>
-    <br>
-       <div class="svelte">
+    <br />
+    <div class="svelte">
       <h2 class="title">Svelte.Js</h2>
-    <h2>Forks:</h2>
-    <h4 class="data"> {{svelte_data.forks_count}} </h4>
-    <h2>Watchers:</h2>
-    <h4 class="data"> {{svelte_data.watchers}} </h4>
-    <h2>Stars:</h2>
-    <h4 class="data"> {{svelte_data.stargazers_count}} </h4>
+      <h2>Forks:</h2>
+      <h4 class="data">{{ svelte_data.forks_count }}</h4>
+      <h2>Watchers:</h2>
+      <h4 class="data">{{ svelte_data.watchers }}</h4>
+      <h2>Stars:</h2>
+      <h4 class="data">{{ svelte_data.stargazers_count }}</h4>
     </div>
-    <br>
-       <div class="react">
+    <br />
+    <div class="react">
       <h2 class="title">React</h2>
-    <h2>Forks:</h2>
-    <h4 class="data"> {{react_data.forks_count}} </h4>
-    <h2>Watchers:</h2>
-    <h4 class="data"> {{react_data.watchers}} </h4>
-    <h2>Stars:</h2>
-    <h4 class="data"> {{react_data.stargazers_count}} </h4>
+      <h2>Forks:</h2>
+      <h4 class="data">{{ react_data.forks_count }}</h4>
+      <h2>Watchers:</h2>
+      <h4 class="data">{{ react_data.watchers }}</h4>
+      <h2>Stars:</h2>
+      <h4 class="data">{{ react_data.stargazers_count }}</h4>
     </div>
   </div>
 </template>
@@ -66,8 +67,14 @@
 
 <script>
 import axios from "axios";
+import VueCharts from "vue-chartjs";
+import CommitChart from "../components/CommitChart";
 
 export default {
+  mounted() {
+    // Overwriting base render method with actual data.
+  },
+  components: { CommitChart },
   data: function () {
     return {
       message: "JS Framework Watcher",
