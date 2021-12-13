@@ -78,11 +78,11 @@ export default {
   data: function () {
     return {
       message: "JS Framework Watcher",
-      vue_data: "",
-      angular_data: "",
-      ember_data: "",
-      svelte_data: "",
-      react_data: "",
+      vue_data: [],
+      angular_data: [],
+      ember_data: [],
+      svelte_data: [],
+      react_data: [],
     };
   },
   created: function () {
